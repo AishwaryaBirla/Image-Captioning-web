@@ -1,0 +1,22 @@
+<head>
+	</head>
+<body>
+	<script>
+	function sendata(){
+	var xhr = new XMLHttpRequest();
+	var i= document.getElementById("form").value
+	xhr.open("POST","http://192.168.2.18/cgi-bin/save.py?form="+i,false);
+	xhr.send();
+	var out= xhr.responseText;
+	document.getElementById('d2').innerHTML=out;
+	}
+	</script>
+	<div id='d2'>okay</div>
+
+<form id="form" enctype="multipart/form-data" action="/cgi-bin/file.py" method="post">
+	<p>File:<input type = "file" id="filename"/></p>
+
+<p><input type= "submit" value ="Upload"/></p>
+</form>
+	
+</body>
